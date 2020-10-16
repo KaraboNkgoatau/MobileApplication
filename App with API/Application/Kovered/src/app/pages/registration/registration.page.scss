@@ -1,0 +1,30 @@
+
+
+ion-item{
+    --background:transparent;     
+}
+
+.login{
+    --display:flex;
+    --align-items: center;
+    --justify-content: center;
+}
+
+
+ion-content{
+    --background: url("../../../assets/img/lakeBW.jpg")
+      no-repeat center center;
+    --display:flex;
+    --align-items: center;
+    --justify-content: center;
+    --opacity:1;
+      
+}
+img{
+    --opacity:0.1;   
+}
+
+ion-item{
+    --background:transparent;  
+   
+}

@@ -1,0 +1,28 @@
+<ion-content>
+  <ion-card>
+<ion-card-content *ngIf="ProfileData">
+    <div class="col-md-7 px-3" >
+      <div class="card-block px-6"  >
+        <h4 class="card-title text-center" color="secondary" >My Profile</h4>
+        <h4 class="card-title text-center" color="secondary">Personal details</h4>
+        <ion-icon name="person-circle-outline"></ion-icon><ion-label color="primary"class="card-text" > Name:  </ion-label> {{ProfileData.FirstName}}
+        <br>
+        <ion-icon name="person-circle-outline"></ion-icon><ion-label color="primary"class="card-text">Surname: </ion-label>{{ProfileData.LastName}}
+        <br>
+        <ion-icon name="call-outline" slot="start"></ion-icon> <ion-label color="primary" class="card-text"> Cellphone number:   </ion-label> {{ProfileData.PhoneNumber}}
+        <br>
+        <ion-icon name="mail" slot="start"></ion-icon><ion-label color="primary" class="card-text"> Email Address:  </ion-label> {{ProfileData.Email}}
+        <br>
+        <ion-label color="primary" class="card-text"> ID number: </ion-label> {{ProfileData.IdentityNumber}} 
+        <br>
+        <ion-icon name="home" slot="start"></ion-icon><ion-label color="primary" class="card-text"> Address:  </ion-label> {{ProfileData.Address}}
+        <br>
+        <ion-icon name="logo-firefox"></ion-icon><ion-label color="primary" class="card-text"> Gender:  </ion-label> {{ProfileData.Gender}}
+
+        <br>
+        <ion-button type="button" color="success" class="btn btn-primary" [routerLink]="['/update-profile']">Update</ion-button> <ion-button type="button" color="danger" class="btn btn-primary" [routerLink]="[ '/landing']">Return</ion-button> 
+      </div>
+    </div>
+  </ion-card-content>
+  </ion-card>
+  </ion-content>

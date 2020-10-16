@@ -1,0 +1,50 @@
+<ion-content>
+<ion-card>
+   <div class="col-md-12 top-20 padding-0">
+     <div class="col-md-12">
+       <div class="panel">
+         <!-- <div class="panel-heading" style="text-align: center;"><h3>Company Contact Details</h3></div> -->
+         <div class="panel-body">
+           <div class="responsive-table">
+            <!-- <button type="button" class="btn btn-success" [routerLink]="[ '/add-contact-details']">Add Details</button> -->
+            <br><br>
+          
+            <ion-card>
+              <ion-card-header>
+                <ion-card-subtitle>KOVERED</ion-card-subtitle>
+                <ion-card-title>Contact Details</ion-card-title>
+              </ion-card-header>
+              <ion-card-content *ngFor="let detail of DetailsData">
+                  <ion-label color="primary">Company Name</ion-label>
+                  <p>{{detail.CompanyName}}</p>
+                  <ion-label color="danger">Email Us On</ion-label> 
+                  <br>
+                  <ion-icon name="mail" slot="start"></ion-icon> <a href>{{detail.CompanyEmailAddress}}</a> 
+                 <br>
+                 <br>
+                 <ion-label color="secondary">Call us On</ion-label>
+                 <ion-icon name="call-outline" slot="start"></ion-icon> <p>{{detail.CompanyPhoneNumber}}</p> 
+                 <ion-label color="primary">Company Website</ion-label>
+                 <ion-icon name="home" slot="start"></ion-icon><a href> {{detail.CompanyWebsite}}</a>
+              </ion-card-content>
+            </ion-card>
+                <!-- <td>
+                    <button type="button" class="btn btn-warning" [routerLink]="['/update-contact-details/',detail.ContactDetailsID]">Update Details</button>
+                    <button type="button" class="btn btn-danger" (click)="deleteDetails(detail)">Delete</button>
+                </td> -->
+              
+  
+           </div>
+           <br>
+           <ion-button type="button" class="btn btn-primary" [routerLink]="[ '/landing']">Return</ion-button>
+       </div>
+     </div>
+   </div>
+</div>
+</ion-card>
+</ion-content>
+<!-- </div>
+<app-footer></app-footer>
+</div>
+</div>
+</div> -->

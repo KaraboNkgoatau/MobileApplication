@@ -1,0 +1,24 @@
+<ion-content>
+  <body>
+  <div class="box" style="height: 90%; width: 95%;">
+    <br>
+    <br>
+    <br>
+    <h2>Take Vehicle Picture</h2>
+    <div class="container vh-100">
+      <div class="d-flex flex-column align-items-center">
+         <div class="p-1">
+            <video #video class="vid" autoplay></video>
+         </div>
+         <div class="pb-2">
+            <ion-button class="btn btn-primary"color="success" (click)="capture()">Capture Image</ion-button> <ion-button type="button" color="danger" class="btn btn-primary" [routerLink]="[ '/landing']">Return</ion-button> 
+              
+         </div>
+         <div class="p-1">
+            <canvas #canvas class="vid"></canvas>
+         </div>
+      </div>
+   </div>
+  </div>
+</body>
+</ion-content>

@@ -1,0 +1,65 @@
+
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"
+  href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css">
+<link rel="stylesheet" type="text/css"
+  href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/fonts/simple-line-icons/style.min.css">
+<link rel="stylesheet" type="text/css"
+  href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css">
+<link rel="stylesheet" type="text/css"
+  href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+<ion-content>
+  
+       <ion-card >
+        <ion-card-content *ngIf="ProfileData">
+          <!-- <ion-button (click)="toggleInfiniteScroll()" expand="block">
+            Toggle Infinite Scroll 
+          </ion-button>  -->
+          
+          <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+           
+            <ion-card-title>
+              Policy Number: {{ProfileData.PolicyNumber}}
+            </ion-card-title>
+            <ion-card-subtitle>
+              View Policy Summary
+            </ion-card-subtitle>
+            <!-- </app-expansion-panel-header> -->
+            <!-- <ion-card class="card bg-light text-dark"> -->
+              <h4>Personal details Summary</h4>
+              <p>First Name: {{ProfileData.FirstName}}</p>
+              <p>Last Name: {{ProfileData.LastName}}</p>
+              <p>Phone Name: {{ProfileData.PhoneNumber}}</p>
+              <p>Identity Number: {{ProfileData.IdentityNumber}}</p>
+              <p>Address: {{ProfileData.Address}}</p>
+
+              <h4><b>Vehicle Summary</b></h4>
+              <p>Make: {{ProfileData.MakeName}}</p>
+              <p>Type: {{ProfileData.Type}}</p>
+              <p>Model Description: {{ProfileData.ModelDescription}}</p>
+              <p>Series Name: {{ProfileData.SeriesName}}</p>
+              <p>Colour: {{ProfileData.Description}}</p>
+              <p>Registration Number: {{ProfileData.RegistrationNumber}}</p>
+            <!-- </ion-card> -->
+            <!-- <br> -->
+            <!-- <ion-card class="card bg-light text-dark"> -->
+              <h4><b>Current Savings Summary</b></h4>
+              <p>Inception Date: {{ProfileData.InceptionDate}}</p>
+              <p>Renewal Date: {{ProfileData.RenewalDate}}</p>
+              <p>Savings Balance: {{ProfileData.SavingsBalance}}</p>
+              <p>Claimable Amount: {{ProfileData.ClaimableAmount}}</p>
+              <p>Payment Of Premium: {{ProfileData.PaymentOfPremium}}</p>
+              <p>Collection Date: {{ProfileData.CollectionDate}}</p>
+
+              <ion-button type="button" color="danger" class="btn btn-primary" [routerLink]="[ '/landing']">Return</ion-button> 
+              
+            <!-- </ion-card> -->
+
+
+            <!-- </app-expandable> -->
+          </ion-infinite-scroll>
+        </ion-card-content>
+      </ion-card>
+    </ion-content>

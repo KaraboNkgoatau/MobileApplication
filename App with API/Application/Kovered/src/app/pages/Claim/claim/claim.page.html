@@ -1,0 +1,60 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>claim</ion-title>
+  </ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-back-button>back</ion-back-button>
+  </ion-buttons>
+</ion-header> -->
+
+<ion-card>
+<ion-card-content>
+  
+<!-- <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css">
+<link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/fonts/simple-line-icons/style.min.css">
+<link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css">
+<link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet"> -->
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Log In</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<div class="card">
+<div class="container">
+<div *ngIf="isLoadingData" style="text-align:center" id="spinner">
+  <mat-spinner></mat-spinner>
+</div>
+
+<ion-input #fileUpload type="file" (change)="fileChangeEvent($event)" placeholder="Upload file..." multiple accept=".pdf" ></ion-input>
+
+<ion-button type="button"color="success" (click)="upload()">Upload</ion-button>
+<ion-button type="button" color="warning" (click)="cancelUpload()">Clear</ion-button>
+
+
+<br>
+<ion-button type="button" class="btn btn-primary"color="danger" [routerLink]="[ '/landing']">Return</ion-button>
+<br>
+<div *ngIf="filesToUpload?.length > 0"><br /><p>{{filesToUpload?.length}} files selected : </p></div>
+
+<ion-list>
+  <ion-item *ngFor="let fileName of selectedFileNames; let i = index">
+      {{fileName}}
+  </ion-item>
+</ion-list>
+
+<div [innerHtml]="uploadResult"></div>
+
+<div style="color:red">
+  {{errorMessage}}
+</div>
+</div>
+</div>
+
+</ion-card-content>
+</ion-card>

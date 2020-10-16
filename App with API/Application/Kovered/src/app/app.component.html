@@ -1,0 +1,161 @@
+<ion-app>
+
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay">
+      <ion-content>
+        <ion-list id="inbox-list">
+          <ion-list-header>Welcome</ion-list-header>
+          <ion-note>What would you like to do?</ion-note>
+
+          <!-- <ion-menu-toggle auto-hide="false"> -->
+            <!-- <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" [class.selected]="selectedIndex == i">
+              <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+              <ion-label>{{ p.title }}</ion-label>
+            </ion-item> -->
+            <ion-menu-toggle auto-hide="false">
+              <ion-label>
+            <ion-item
+            expand="block"
+            routerLink='/Claim'
+            routerDirection="root"
+            ><ion-icon
+            name="document"
+            style ="padding :5px"
+            ></ion-icon>Upload Vehicle Image
+            </ion-item>
+          </ion-label>
+
+          <ion-label>
+            <ion-item
+            expand="block"
+            routerLink='/Track Claim'
+            routerDirection="root"
+            ><ion-icon
+            name="briefcase-outline"
+            style ="padding :5px"
+            ></ion-icon>Track Claim
+            </ion-item>
+          </ion-label>
+
+
+            <!-- <ion-label>
+            <ion-item
+            expand="block"
+            routerLink='/Contact Details'
+            routerDirection="root"
+            ><ion-icon
+            name="home"
+            style ="padding :5px"
+            ></ion-icon> Policy Information
+            </ion-item>
+          </ion-label> -->
+
+          <!-- <ion-label>
+            <ion-item
+            expand="block"
+            routerLink='/Loan'
+            routerDirection="root"
+            ><ion-icon
+            name="briefcase-outline"
+            style ="padding :5px"
+            ></ion-icon>Loan Request
+            </ion-item>
+          </ion-label>
+
+          
+
+          <ion-label>
+            <ion-item
+            expand="block"
+            routerLink='/Withdrawal Request'
+            routerDirection="root"
+            ><ion-icon
+            name="briefcase-outline"
+            style ="padding :5px"
+            ></ion-icon>Savings Withdrawal
+            </ion-item>
+          </ion-label> -->
+
+          <ion-label>
+            <ion-item
+            expand="block"
+            routerLink='/Kover'
+            routerDirection="root"
+            ><ion-icon
+            name="document"
+            style ="padding :5px"
+            ></ion-icon>Policy Information
+            </ion-item>
+          </ion-label>
+
+
+          <!-- <ion-label>
+            <ion-item
+            expand="block"
+            routerLink='/update-profile'
+            routerDirection="root"
+            ><ion-icon
+            name="document"
+            style ="padding :5px"
+            ></ion-icon>Update Profile
+            </ion-item>
+          </ion-label> -->
+
+          <ion-label>
+            <ion-item
+            expand="block"
+            routerLink='/view-profile'
+            routerDirection="root"
+            ><ion-icon
+            name="document"
+            style ="padding :5px"
+            ></ion-icon> View Profile
+            </ion-item>
+          </ion-label>
+
+          <ion-label>
+            <ion-item
+            expand="block"
+            routerLink='/ContactUs'
+            routerDirection="root"
+            ><ion-icon
+            name="call-outline"
+            style ="padding :5px"
+            ></ion-icon>Contact Us
+            </ion-item>
+          </ion-label>
+
+          <ion-label>
+            <ion-item
+            expand="block"
+            routerLink='/take'
+            routerDirection="root"
+            ><ion-icon
+            name="document"
+            style ="padding :5px"
+            ></ion-icon> Take Vehicle Picture
+            </ion-item>
+          </ion-label>
+
+
+
+
+
+
+          </ion-menu-toggle>
+
+
+
+
+
+
+          <!-- </ion-menu-toggle> -->
+        </ion-list>
+          <ion-item>
+              <ion-button expand="block" color="danger" (click)="Logout()">Log out</ion-button>
+          </ion-item>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

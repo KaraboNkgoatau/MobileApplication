@@ -1,0 +1,27 @@
+<ion-card>
+  <div class="container">
+    <br>
+    <br>
+    <h3 style="text-align: center; font-family: sans-serif;color:blue;">Track Your Claim</h3>
+    <form [formGroup]="TrackClaimForm" (ngSubmit)="TrackClaim()">
+        <div class="form-group">
+            <ion-label for="name"></ion-label>
+            <ion-input type="text" [ngClass]="{ 'is-invalid': submitted && f.Description.errors }" formControlName="Description" maxlength="10" minlength="10" class="form-control" id="name" [(ngModel)]="data.ClaimID" placeholder="Please provide your ClaimID">
+            <div *ngIf="submitted && f.Description.errors" class="invalid-feedback">
+              <div *ngIf="f.Description.errors.required">Please enter your ClaimID </div>
+              <div *ngIf="f.Description.errors.minlength">ClaimID provided is too short , 10 characters are required </div>
+            </div>
+            </ion-input>
+            </div>
+        <ion-button type="submit" class="btn btn-success">Track</ion-button><ion-button type="button"color="danger" class="btn btn-primary" [routerLink]="[ '/landing']">Return</ion-button>
+
+        </form>
+
+        <p>Hi</p>
+        <div>
+          <div *ngFor="let claim of ClaimData">
+            <p>{{claim.ClaimID}}</p>
+          </div>
+        </div>
+  </div>
+</ion-card>

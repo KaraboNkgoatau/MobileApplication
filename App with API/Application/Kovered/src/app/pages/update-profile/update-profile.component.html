@@ -1,0 +1,54 @@
+<ion-content>
+   <ion-card *ngIf="ProfileData">
+  <form  [formGroup]="updateProfile" >
+    <br><br>
+      <h3>Update Profile</h3>
+      <div class="form-group">
+        <ion-icon name="person-circle-outline"></ion-icon> <ion-label color="primary" for="name">Name:</ion-label>
+        <ion-input type="text" [ngClass]="{ 'is-invalid': submitted && f.Name.errors }" formControlName="Name"  class="form-control" id="name" [value]="ProfileData.FirstName"  placeholder="Enter  Name"></ion-input>
+        <div *ngIf="submitted && f.Name.errors" class="invalid-feedback">
+          <div *ngIf="f.Name.errors.required"> Name is required</div>
+      </div>
+    </div> 
+    <div class="form-group">
+      <ion-icon name="person-circle-outline"></ion-icon><ion-label color="primary" for="Surname">Surname</ion-label>
+      <ion-input type="text" [ngClass]="{ 'is-invalid': submitted && f.Surname.errors }" formControlName="Surname" [value]="ProfileData.LastName" class="form-control" id="Surname"  placeholder="Enter  Name"></ion-input>
+      <div *ngIf="submitted && f.Surname.errors" class="invalid-feedback">
+        <div *ngIf="f.Surname.errors.required">Surname  is required</div>
+    </div>
+  </div>
+    <div class="form-group">
+      <ion-label color="primary"for="name">Email Address</ion-label>
+      <ion-icon name="mail" slot="start"></ion-icon><ion-input type="text" [ngClass]="{ 'is-invalid': submitted && f.Email.errors }" formControlName="Email" [value]="ProfileData.Email " class="form-control" id="name"  placeholder="Enter Email Address "></ion-input>
+      <div *ngIf="submitted && f.Email.errorsion" class="invalid-feedback">
+        <div *ngIf="f.Email.errors.required"> Email Address is required</div>
+        <div *ngIf="f.Email.errors.required">Incorrect email format</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <ion-label color="secondary"for="name"> ID number</ion-label>
+    <ion-input disabled type="text" class="form-control" formControlName="ID"  id="name" [value]="ProfileData.IdentityNumber"></ion-input>
+</div>
+  <div class="form-group">
+    <ion-label color="primary" for="name"> Cellphone number</ion-label>
+    <ion-icon name="call-outline" slot="start"></ion-icon><ion-input type="text" [ngClass]="{ 'is-invalid': submitted && f.PhoneNumber.errors }" formControlName="PhoneNumber" [value]="ProfileData.PhoneNumber" class="form-control" id="name"  placeholder="Phone Number "></ion-input>
+    <div *ngIf="submitted && f.PhoneNumber.errors" class="invalid-feedback">
+      <div *ngIf="f.PhoneNumber.errors.required"> Cellphone number is required</div>
+  </div>
+</div>
+<div class="form-group">
+  <ion-icon name="home" slot="start"></ion-icon><ion-label color="primary" for="name">Address</ion-label>
+  <ion-input type="text" [ngClass]="{ 'is-invalid': submitted && f.Address.errors }"  formControlName="Address" class="form-control" id="name" [value]="ProfileData.Address " placeholder="Enter Address"></ion-input>
+  <div *ngIf="submitted && f.Address.errors" class="invalid-feedback">
+    <div *ngIf="f.Address.errors.required"> Address is required</div>
+</div>
+</div> 
+<div class="form-group">
+  <ion-label color="secondary" for="name"> Gender</ion-label>
+  <ion-icon name="logo-firefox"></ion-icon><ion-input disabled type="text" class="form-control" formControlName="Gender"  [value]="ProfileData.Gender" id="name" ></ion-input>
+</div>
+        <ion-button type="submit" color="success" class="btn btn-success mr-2s"(click)="updateUserProfile()">Update</ion-button>
+        <ion-button type="submit" class="btn btn-danger" color="danger" [routerLink]="['/view-profile']">Cancel</ion-button>
+ </form>
+</ion-card>  
+</ion-content>
